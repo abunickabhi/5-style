@@ -1,5 +1,4 @@
 # 5-Style : 3x3 Blindfold method
-## 5-Style is an extension to the very popular , efficient and finger-tricky 3x3 blindfolded method , 3-Style.
 
 ![Image description](https://github.com/abunickabhi/5-style/blob/master/images/abhg.png)
 
