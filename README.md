@@ -1,6 +1,6 @@
 # 5-Style : 3x3 Blindfold method
 
-![Image description](https://github.com/abunickabhi/5-style/blob/master/images/abhg.png)
+![Image description](https://github.com/abunickabhi/5-style/blob/master/images/5style.png)
 
 This doc will be discussing how you can intensely plan out your workflow in order to master 5-Style. With a method as daunting as this, you need a proper regime and workflow to sail all the way through. The fruits are enormous but so is the hard work and grind towards covering up and drilling all those 126,720 edge algs. The end result can be that you can expect CFOP length solutions in your Blind method execution, and you can have bigger grasping power while memorizing any worldly stuff.
 
