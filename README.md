@@ -1,4 +1,4 @@
-# 5-Style : 3x3 Blindfold method
+# 5-Style : 3x3 Blindfold Advanced Method
 
 ![Image description](https://github.com/abunickabhi/5-style/blob/master/images/5style.jpg)
 
@@ -13,9 +13,9 @@ https://docs.google.com/document/d/1b3tT8Wv18WdzFyY7FujyptwzYeWFH8K-UXTddTvwUWw/
 
 Year 2:
 
-Learn Orozco and 3-Style Method (UF/UFR). Practice Mnenomics and Memory techniques 
-https://bestsiteever.ru/memotest/
-Memory Palace and Loci Method
+Learn Orozco and 3-Style Method (UF/UFR). Practice Mnenomics and Memory techniques. 
+An example site is: https://bestsiteever.ru/memotest/
+Topics to be covered are, Memory Palace and Loci Method
 
 Year 3:
 
@@ -35,7 +35,7 @@ https://docs.google.com/document/d/1bfDsydw6pxBftd8Xwik95FNjILGkdrJMBO5EORbftII/
 
 I will be also documenting my progress on the fingertricks like in this video: https://www.youtube.com/watch?v=rkNI46No_xw
 
-Since I am just starting out drilling, not all algs are sub-1ed by me, but I think they can be sub 1.5ed since most of the algs are no more than 14 moves. Right now, I am 8000 algs down in UF and DF, and I need to memorize ~118000 algs more. Still lots of night hours and computer time to be burnt!
+Since I am just starting out drilling, not all algs are sub-1ed by me, but I think they can be sub 1.5ed since most of the algs are no more than 12 moves STM. Right now, I am 8000 algs down in UF and DF, and I need to memorize ~118000 algs more. Still lots of night hours and computer time to be burnt!
 
 With the Giiker cube coming out last year, you can drill even more algorithms faster and randomly, thus saving valuable save time.
 https://briefcubing.com/?enable-5-style
