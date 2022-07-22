@@ -1,8 +1,13 @@
-# 5-Style : 3x3 Blindfold Advanced Method
+# 5-Style : Blindsolving Algset
 
 ![Image description](https://github.com/abunickabhi/5-style/blob/master/images/5style.jpg)
 
-The end goal of this method is to have CFOP-like length solutions in your Blind method execution, and you can have bigger thinkahead and hopefully reduce the mental effort of memo phase.
+The fingertricks are open sourced here:
+https://www.youtube.com/channel/UCa7dTclUqnR9VwSeOCpRwAQ
+
+The end goal of this method is to have CFOP-like length solutions in your Blind method execution, and you can have bigger thinkahead and hopefully reduce the mental effort of memo phase. 
+
+If you are seeing this method for the first time, the rough calculations and plan below is the estimate for how long it will take to understand and get functional / proficient with it. Potentially it will be a speedup and add-on to full floating 3-style, full parity, LTCT and LTEF.
 
 # Year 1
 
@@ -31,11 +36,7 @@ Drill all the 5-Style algs and make them sub-1 using the Giiker cube. Invent new
 Yo notation to memorize the algorithms
 https://docs.google.com/document/d/1bfDsydw6pxBftd8Xwik95FNjILGkdrJMBO5EORbftII/edit?usp=sharing
 
-I will be also documenting my progress on the fingertricks like in this video: https://www.youtube.com/watch?v=rkNI46No_xw
-
-
 With the Giiker cube, you can drill even more algorithms faster and randomly, thus saving valuable save time.
 https://abunickabhi.github.io/5style-Trainer/
 
-Open sourcing of the fingertricks on this YT channel.
-https://www.youtube.com/channel/UCa7dTclUqnR9VwSeOCpRwAQ
+
