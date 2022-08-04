@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>Algorithm Translator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+		<meta name="description" content="Manipulates rubiks cube algorithms including mirrors, rotations and inverse.">
+		<meta name="keywords" content="rubiks cube, rubiks, cube, alg, algorithm, mirror, rotate, inverse, invert, translate, transform, mirror algorithm, rotate algorithm, invert algorithm">
+		<meta name="resource-type" content="document">
+		<meta name="language" content="English">
+
+		<meta name="rating" content="general">
+		<meta name="robots" content="all">
+		<meta name="expires" content="never">
+		<meta name="revisit-after" content="14 days">
+		<meta name="distribution" content="global">
+		<meta name="author" content="Conrad Rider">
+		<meta name="copyright" content="Copyright Â© 2010 Conrad Rider">
+		<meta http-equiv="Content-Type" content="text/html; iso-8859-1">
+		<link rel="shortcut icon" href="http://cube.crider.co.uk/favicon.ico">
+		<script async="" src="./Algorithm Translator_files/analytics.js"></script><script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-6032817-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+		<style media="screen" type="text/css">
+			@import url("common.css");
+		</style>
+		<style type="text/css">
+			#container{
+				margin-left:auto;
+				margin-right:auto;
+			}
+			#content ul{
+				margin-left:0;
+				padding-left:0;
+				list-style:none
+			}
+			#content li{
+				clear:both;
+				margin-left:0;
+				padding-left:0;
+				max-width:500px;
+				margin-bottom:25px;
+				font-weight:bold;
+			}
+			#content a{
+				text-decoration:none;
+			}
+			#content a:hover{
+				text-decoration:underline;
+			}
+			#content li div{
+				display:inline-block;
+				padding-left:10px;
+				font-weight:normal;
+			}
+			#algform{
+				text-align:center;
+			}
+			#man_menu{
+				position:absolute;
+			/*	display:none;*/
+				top:0px;
+				left:0px;
+			}
+			#man_table{
+				border:2px solid #888;
+				color:#555;
+				background-color:#f1f1f3;
+			}
+			#man_table a{
+				text-decoration:none;
+				color:#555;
+			}
+			#man_table td{
+				padding:0 5px;
+			}
+			#man_table td:hover{
+				background-color:#DDD;
+			}
+			.menu{ }
+			.hidden{
+				visibility:hidden;
+			}
+		</style>
+		<script type="text/javascript">
+			ALG_POW = Array ('', "2", "'");
+			MOV = Array('U', 'R',  'F',  'D',  'L',  'B',  'u',  'r',  'f',  'd',  'l',  'b',  'E',  'M',  'S',  'x',  'y',  'z' );
+			//MAN = Array('d',  'l',  'b',  'u',  'r',  'f',  'D',  'L',  'B',  'U',  'R',  'F',  's',  's',  's',  '-',  '-',  '-' );
+			//XTR = Array('B',  'R',  'U',  'F',  'L',  'D',  'b',  'r',  'u',  'f',  'l',  'd',  'S',  'M',  'E-', 'x',  'z-', 'y' );
+			//YTR = Array('U',  'F',  'L',  'D',  'B',  'R',  'u',  'f',  'l',  'd',  'b',  'r',  'E',  'S-', 'M',  'z',  'y',  'x-');
+			//ZTR = Array('R',  'D',  'F',  'L',  'U',  'B',  'r',  'd',  'f',  'l',  'u',  'b',  'M',  'E-', 'S',  'y-', 'x',  'z' );
+			//MTR = Array('U-', 'L-', 'F-', 'D-', 'R-', 'B-', 'u-', 'l-', 'f-', 'd-', 'r-', 'b-', 'E-', 'M',  'S-', 'x',  'y-', 'z-');
+			//STR = Array('U-', 'R-', 'B-', 'D-', 'L-', 'F-', 'u-', 'r-', 'b-', 'd-', 'l-', 'f-', 'E-', 'M-', 'S',  'x-', 'y-', 'z' );
+			//ETR = Array('D-', 'R-', 'F-', 'U-', 'L-', 'B-', 'd-', 'r-', 'f-', 'u-', 'l-', 'b-', 'E',  'M-', 'S-', 'x-', 'y',  'z-');
+MY_TRANS = Array('a',  'j',  'v',  'd',  'g',  'y',  'qa',  'nj',  'sv',  'pd',  'mg',  'ty',  'p',  'm',  's',  'x',  'y',  'z' );
+
+// Complete Yo Notation cannot be acommodated as U and U' are a and b, so directed to different letters
+/*
+U  - A
+U' - B
+U2 - C
+D  - D
+D' - E
+D2 - F
+L  - G
+L' - H
+L2  - I 
+M  - M
+M'  - N
+M2 - O
+R   - J 
+R'  - K
+R2 - L
+S   - S
+S'  - T
+S2  - U
+E  - P
+E' - Q
+E2 - R
+F   - V
+F'  - W
+F2 - X
+B   - Y
+B'  - Z
+
+And for wide moves,
+u - QA
+u' - BP
+u2 - RC
+f - SV
+f' - WT
+f2 - XU
+l' - NH
+l - MG
+l2 - OI
+r - NJ
+r' - MK
+r2 - OL
+x - LI
+x' - MI
+y - GI
+y' - KJ
+z - QP
+z' -DP
+https://docs.google.com/document/d/1bfDsydw6pxBftd8Xwik95FNjILGkdrJMBO5EORbftII/edit?usp=sharing
+*/
+
+			// Maps move names to a move id
+			function move_id(move){
+				switch(move){
+					case 'U': return 0;
+					case 'R': return 1;
+					case 'F': return 2;
+					case 'D': return 3;
+					case 'L': return 4;
+					case 'B': return 5;
+					case 'u': return 6;
+					case 'r': return 7;
+					case 'f': return 8;
+					case 'd': return 9;
+					case 'l': return 10;
+					case 'b': return 11;
+					case 'E': return 12;
+					case 'M': return 13;
+					case 'S': return 14;
+					case 'x': return 15;
+					case 'y': return 16;
+					case 'z': return 17;
+				}
+				return -1;
+			}
+			// Returns the power of a move with given suffix
+			function move_pow(chr){
+				switch(chr){
+					case "2" : return 1;
+					case "'" : return 2;
+					case "3" : return 2;
+				}
+				return 0;
+			}
+			function regen(alg){
+				document.getElementById('alg').value = alg;
+				generate(alg);
+			}
+			function generate(alg){
+				//document.getElementById("rt_x").innerHTML = trans_alg(alg, XTR);
+				//document.getElementById("rt_y").innerHTML = trans_alg(alg, YTR);
+				//document.getElementById("rt_z").innerHTML = trans_alg(alg, ZTR);
+				document.getElementById("invr").innerHTML = invert_alg(alg);
+				//document.getElementById("mr_m").innerHTML = trans_alg(alg, MTR);
+				//document.getElementById("mr_s").innerHTML = trans_alg(alg, STR);
+				//document.getElementById("mr_e").innerHTML = trans_alg(alg, ETR);
+				document.getElementById("my_trans").innerHTML = trans_alg(alg, MY_TRANS);
+				//document.getElementById("mn").innerHTML = man_link(alg);
+			}
+			// Translates an alg according to the given translation table
+			function trans_alg(alg, trn, mir){
+				var n = alg.length;
+				var i = 0;
+				var out = '';
+				while(i < n){
+					var move = move_id(alg.substr(i, 1));
+					if(move != -1){
+						pow = 0;
+						if(i < n -1) pow = move_pow(alg.substr(i + 1, 1));
+						out += trn[move].substr(0,1) + (trn[move].length > 1 ?
+							ALG_POW[2 - pow] : ALG_POW[pow]) + " ";
+					}
+					i++;
+				}
+				return out;
+			}
+			// Inverts a cube algorithm
+			function invert_alg(alg){
+				var inverse = "";
+				var pow = 0;
+				var i = alg.length - 1;
+				while(i >= 0){
+					var move = move_id(alg.substr(i, 1));
+					if(move != -1){
+						inverse += alg.substr(i, 1) + ALG_POW[2 - pow] + " ";
+						pow = 0;
+					}
+					else pow = move_pow(alg.substr(i, 1));
+					i--;
+				}
+				return inverse;
+			}
+			function get_tr(move){
+				if(move == 15) return XTR;
+				if(move == 16) return YTR;
+				if(move == 17) return ZTR;
+				if(move % 3 == 0) return YTR;
+				if(move % 3 == 1) return XTR;
+				if(move % 3 == 2) return ZTR;
+				return MOV;
+			}
+		
+			//]]>
+		</script>
+	</head>
+	<body onmousedown="hide_mn(event)">
+	
+		<div id="container">
+			<div id="header">
+				<h1>Algorithm Translator</h1>
+			</div>
+			<div id="content">
+				<br>
+				<form action="http://cube.crider.co.uk/algtrans.html#" onsubmit="generate(document.getElementById(&#39;alg&#39;).value);return false;">
+					<div id="algform">
+						<input type="text" id="alg" size="40" onkeyup="generate(this.value)" onmouseup="generate(this.value)">
+						<input type="submit" value="GO!">
+					</div>
+				</form>
+				<br>
+				<ul>
+<li><a href="#" onclick="regen(document.getElementById('my_trans').innerHTML); return false;">Yo Notation:</a><div id="my_trans"></div></li>
+					<li><a href="http://cube.crider.co.uk/algtrans.html#" onclick="regen(document.getElementById(&#39;invr&#39;).innerHTML); return false;">Inverse:</a><div id="invr"> </div></li>
+				</ul>
+			</div>
+		</div>
+	
+	
+
+</body></html>

@@ -4,6 +4,11 @@ Created on Sun Feb  7 05:01:05 2021
 @author: abhi
 """
 import re
+
+#%% Batch processing of algs here, algs will be comma seperated
+algs = " U' S U2 S U' S2 L E L2 E' L , l U M' U M U2 l' "
+
+#%%
 string = " U' S U2 S U' S2 L E L2 E' L "
 #string = "l U M' U M U2 l' "
 
