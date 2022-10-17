@@ -1,16 +1,14 @@
 """
-Created on Sun Feb  7 05:01:05 2021
+Created on Sun Feb 7 05:01:05 2021
 
 @author: abhi
+
+This is a working code that takes one alg sequences and makes it into Yo notation. Work is still going on to make it function for batches.
 """
 import re
-
-#%% Batch processing of algs here, algs will be comma seperated
-algs = " U' S U2 S U' S2 L E L2 E' L , l U M' U M U2 l' "
-
-#%%
-string = " U' S U2 S U' S2 L E L2 E' L "
-#string = "l U M' U M U2 l' "
+import pyperclip
+string = input("Enter the alg:")
+string = string + " "
 
 string = re.sub(r'(M )(?!\')', 'm', string)
 string = re.sub(r'(M\' )(?!\')', 'n', string)
@@ -46,5 +44,21 @@ string = re.sub(r'(r2 )(?!\')', 'ol', string)
 string = re.sub(r'(l )(?!\')', 'mg', string)
 string = re.sub(r'(l\' )(?!\')', 'nh', string)
 string = re.sub(r'(l2 )(?!\')', 'oi', string)
+string = re.sub(r'(f )(?!\')', 'sv', string)
+string = re.sub(r'(f\' )(?!\')', 'wt', string)
+string = re.sub(r'(f2 )(?!\')', 'xu', string)
+string = re.sub(r'(d )(?!\')', 'pd', string)
+string = re.sub(r'(d\' )(?!\')', 'eq', string)
+string = re.sub(r'(d2 )(?!\')', 'rf', string)
 string = ' '.join(re.findall(r'.{1,4}', string))
-print(string)
+
+#print(string)
+pyperclip.copy(string)
+
+#%%
+f=\
+lambda a:[(v+"'")[:2-("'"in v)]for v in a[::-1]]
+string = input("Enter the alg:").split()
+output = f(string)
+output = ' '.join(map(str, output))
+pyperclip.copy(output)
