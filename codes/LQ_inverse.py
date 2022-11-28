@@ -6,8 +6,7 @@ import numpy as np
 import pandas as pd
 import re
 #%%
-#inputdata= open("D:/Others/Cubing/letter_quad_inverse_program/lq.txt", "r")
-inputdata = np.loadtxt('D:/Others/Cubing/letter_quad_inverse_program/lq.txt',dtype=str)
+inputdata = np.loadtxt('D:\Others\Cubing\Cubing_Programs\LQs/quads.txt',dtype=str)
 #%%
 #inputdata = lqtxt
 for i in (0,len(inputdata)-1):
@@ -42,4 +41,4 @@ for i in range(len(result)):
 
 #%%
 df = pd.DataFrame(results) 
-df.to_excel('D:/Others/Cubing/letter_quad_inverse_program/output.xlsx', sheet_name='sheet1',index=False)
+df.to_excel('D:\Others\Cubing\Cubing_Programs\LQs/output.xlsx', sheet_name='sheet1',index=False)
