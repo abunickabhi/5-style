@@ -2,13 +2,14 @@
 Created on Mon Nov 23 10:09:00 2020
 @author: abhi
 """
-import numpy as np
+
 import pandas as pd
 import re
 #%%
-inputdata = np.loadtxt('D:\Others\Cubing\Cubing_Programs\LQs/quads.txt',dtype=str)
+#import numpy as np
+#inputdata = np.loadtxt('D:\Others\Cubing\Cubing_Programs\LQs/quads.txt',dtype=str)
 #%%
-#inputdata = lqtxt
+inputdata = quadtxt
 for i in (0,len(inputdata)-1):
     inputdata[i] = inputdata[i].lstrip()
     inputdata[i] = inputdata[i].rstrip()
@@ -41,4 +42,4 @@ for i in range(len(result)):
 
 #%%
 df = pd.DataFrame(results) 
-df.to_excel('D:\Others\Cubing\Cubing_Programs\LQs/output.xlsx', sheet_name='sheet1',index=False)
+df.to_excel('D:/Others/Cubing/output.xlsx', sheet_name='sheet1',index=False)
