@@ -2,12 +2,8 @@
 Created on Mon Nov 23 10:09:00 2020
 @author: abhi
 """
-
 import pandas as pd
 import re
-#%%
-#import numpy as np
-#inputdata = np.loadtxt('D:\Others\Cubing\Cubing_Programs\LQs/quads.txt',dtype=str)
 #%%
 inputdata = quadtxt
 for i in (0,len(inputdata)-1):
