@@ -5,7 +5,7 @@ Created on Mon Nov 23 10:09:00 2020
 import pandas as pd
 import re
 #%%
-inputdata = quadtxt
+inputdata = quadstxt
 for i in (0,len(inputdata)-1):
     inputdata[i] = inputdata[i].lstrip()
     inputdata[i] = inputdata[i].rstrip()
