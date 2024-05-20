@@ -23,7 +23,7 @@ result=[]
 for i in res:
     result.append(i[::-1]) #result object contains the final new inverted LQs
     
-#%% remove instances which contain letter h
+#%% remove instances 
 results = []
 for i in range(len(result)):
     if (re.search('h', result[i]) == None and re.search('ae', result[i]) == None and re.search('bf', result[i]) == None and re.search('fb', result[i]) == None
@@ -35,6 +35,45 @@ for i in range(len(result)):
         and re.search('sv', result[i]) == None and re.search('vs', result[i]) == None and re.search('dh', result[i]) == None
         ):
         results.append(result[i])
+        
+#%% remove instances anywhere
+results2 = []
+for i in range(len(result)):
+    if (re.search('h', result[i]) == None 
+        and re.search('a.*e|e.*a', result[i]) == None 
+        and re.search('b.*f|f.*b', result[i]) == None 
+        and re.search('c.*g|g.*c', result[i]) == None  
+        and re.search('i.*j|j.*i', result[i]) == None
+         and re.search('l.*k|k.*l', result[i]) == None 
+         and re.search('m.*n|n.*m', result[i]) == None 
+        and re.search('o.*p|p.*o', result[i]) == None 
+        and re.search('t.*q|q.*t', result[i]) == None
+        and re.search('u.*r|r.*u', result[i]) == None 
+        and re.search('s.*v|v.*s', result[i]) == None 
+        and re.search('d.*h|h.*d', result[i]) == None
+        and re.search('d.*x|x.*d', result[i]) == None
+        ):
+        results2.append(result[i])
+        
+#%% remove instances anywhere
+results3 = []
+for i in range(len(result)):
+    if (re.search('h', result[i]) == None 
+        and re.search('^a.*e|e.*a*$', result[i]) == None 
+        and re.search('^b.*f|f.*b*$', result[i]) == None 
+        and re.search('^c.*g|g.*c*$', result[i]) == None  
+        and re.search('^i.*j|j.*i*$', result[i]) == None
+         and re.search('^l.*k|k.*l*$', result[i]) == None 
+         and re.search('^m.*n|n.*m*$', result[i]) == None 
+        and re.search('^o.*p|p.*o*$', result[i]) == None 
+        and re.search('^t.*q|q.*t*$', result[i]) == None
+        and re.search('^u.*r|r.*u*$', result[i]) == None 
+        and re.search('^s.*v|v.*s*$', result[i]) == None 
+        and re.search('^d.*h|h.*d*$', result[i]) == None
+        and re.search('^d.*x|x.*d*$', result[i]) == None
+        ):
+        results3.append(result[i])
+
 
 #%%
 df = pd.DataFrame(results) 
