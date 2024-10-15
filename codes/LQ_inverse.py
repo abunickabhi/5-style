@@ -37,42 +37,42 @@ for i in range(len(result)):
         results.append(result[i])
         
 #%% remove instances anywhere
-results2 = []
-for i in range(len(result)):
-    if (re.search('h', result[i]) == None 
-        and re.search('a.*e|e.*a', result[i]) == None 
-        and re.search('b.*f|f.*b', result[i]) == None 
-        and re.search('c.*g|g.*c', result[i]) == None  
-        and re.search('i.*j|j.*i', result[i]) == None
-         and re.search('l.*k|k.*l', result[i]) == None 
-         and re.search('m.*n|n.*m', result[i]) == None 
-        and re.search('o.*p|p.*o', result[i]) == None 
-        and re.search('t.*q|q.*t', result[i]) == None
-        and re.search('u.*r|r.*u', result[i]) == None 
-        and re.search('s.*v|v.*s', result[i]) == None 
-        and re.search('d.*h|h.*d', result[i]) == None
-        and re.search('d.*x|x.*d', result[i]) == None
-        ):
-        results2.append(result[i])
+# result2 = []
+# for i in range(len(result)):
+#     if (re.search('h', result[i]) == None 
+#         and re.search('a.*e|e.*a', results[i]) == None 
+#         and re.search('b.*f|f.*b', results[i]) == None 
+#         and re.search('c.*g|g.*c', results[i]) == None  
+#         and re.search('i.*j|j.*i', results[i]) == None
+#         and re.search('l.*k|k.*l', results[i]) == None 
+#         and re.search('m.*n|n.*m', results[i]) == None 
+#         and re.search('o.*p|p.*o', results[i]) == None 
+#         and re.search('t.*q|q.*t', results[i]) == None
+#         and re.search('u.*r|r.*u', results[i]) == None 
+#         and re.search('s.*v|v.*s', results[i]) == None 
+#         and re.search('d.*h|h.*d', results[i]) == None
+#         and re.search('d.*x|x.*d', results[i]) == None
+#         ):
+#         result2.append(results[i])
         
-#%% remove instances anywhere
-results3 = []
+#%% remove instances anywhere with spaces
+result3 = []
 for i in range(len(result)):
     if (re.search('h', result[i]) == None 
-        and re.search('^a.*e|e.*a*$', result[i]) == None 
-        and re.search('^b.*f|f.*b*$', result[i]) == None 
-        and re.search('^c.*g|g.*c*$', result[i]) == None  
-        and re.search('^i.*j|j.*i*$', result[i]) == None
-         and re.search('^l.*k|k.*l*$', result[i]) == None 
-         and re.search('^m.*n|n.*m*$', result[i]) == None 
-        and re.search('^o.*p|p.*o*$', result[i]) == None 
-        and re.search('^t.*q|q.*t*$', result[i]) == None
-        and re.search('^u.*r|r.*u*$', result[i]) == None 
-        and re.search('^s.*v|v.*s*$', result[i]) == None 
-        and re.search('^d.*h|h.*d*$', result[i]) == None
-        and re.search('^d.*x|x.*d*$', result[i]) == None
+        and re.search('^a.*e|e.*a*$', results[i]) == None 
+        and re.search('^b.*f|f.*b*$', results[i]) == None 
+        and re.search('^c.*g|g.*c*$', results[i]) == None  
+        and re.search('^i.*j|j.*i*$', results[i]) == None
+        and re.search('^l.*k|k.*l*$', results[i]) == None 
+        and re.search('^m.*n|n.*m*$', results[i]) == None 
+        and re.search('^o.*p|p.*o*$', results[i]) == None 
+        and re.search('^t.*q|q.*t*$', results[i]) == None
+        and re.search('^u.*r|r.*u*$', results[i]) == None 
+        and re.search('^s.*v|v.*s*$', results[i]) == None 
+        and re.search('^d.*h|h.*d*$', results[i]) == None
+        and re.search('^d.*x|x.*d*$', results[i]) == None
         ):
-        results3.append(result[i])
+        result3.append(results[i])
 
 
 #%%
