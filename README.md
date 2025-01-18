@@ -2,9 +2,9 @@
 
 Groups of 4 letters or two letter pairs implying just one image. This list would make memorization have lesser images and become faster. The fluidity and familiarity of the images is quite less at first due to the vast number of cases.
 
-Note: 5-style and letter quads are independent endeavors. The only thing common is the number of cases there are for edges and wings and corners. 
+Note: UF5 and letter quads are independent endeavors. The only thing common is the number of cases there are for edges and wings and corners. 
 
-# 5-Style or UF5 
+# UF5 
 
 ![Image description](https://github.com/abunickabhi/5-style/blob/master/images/5style.jpg)
 
